@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!-- 为了配置JDBC -->
+<hibernate-configuration>
+<session-factory name="foo">
+	<!-- 在控制台上打印Hibernate生成的SQL，在研发阶段使用 -->
+	<property name="show_sql">true</property>
+	<!-- 配置JDBC访问数据库时链接的目标 -->
+	<property name="connection.url">jdbc:mysql://localhost:3306/enddocdb</property>
+	<!-- 配置JDBC访问数据库时登录名 -->
+	<property name="connection.username">root</property>
+	<!-- 配置JDBC访问数据库时密码 -->
+	<property name="connection.password">123456</property>
+	<!-- 配置JDBC访问数据库时使用的驱动的名称 -->
+	<!-- 配置hibernate生成SQL时使用的具体的RDB 的SQL语句的语法 -->
+	<!-- 格式化在控制台上打印Hibernate生成的SQL，在研发阶段使用 -->
+	<!-- #hibernate.dialect org.hibernate.dialect.OracleDialect #hibernate.dialect 
+		org.hibernate.dialect.Oracle9Dialect #hibernate.connection.driver_class oracle.jdbc.driver.OracleDriver 
+		#hibernate.connection.username ora #hibernate.connection.password ora #hibernate.connection.url 
+		jdbc:oracle:thin:@localhost:1521:orcl #hibernate.connection.url jdbc:oracle:thin:@localhost:1522:XE 
+		只要配置c3p0的任何一项，hibernate将使用c3p0连接池； #hibernate.c3p0.max_size 2 #hibernate.c3p0.min_size 
+		2 #hibernate.c3p0.timeout 5000 #hibernate.c3p0.max_statements 100 #hibernate.c3p0.idle_test_period 
+		3000 #hibernate.c3p0.acquire_increment 2 #hibernate.c3p0.validate false -->
+	<!-- 向hibernate注册映射文件 -->
+
+	<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+	<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+	<property name="myeclipse.connection.profile">EndDocDB</property>
+	<mapping resource="com/endDoc/po/User.hbm.xml" />
+	<mapping resource="com/endDoc/po/Attachment.hbm.xml" />
+	<mapping resource="com/endDoc/po/Document.hbm.xml" />
+	<mapping resource="com/endDoc/po/Tag.hbm.xml" />
+	<mapping resource="com/endDoc/po/BriefComment.hbm.xml" />
+	<mapping resource="com/endDoc/po/RateInfo.hbm.xml" />
+	<mapping resource="com/endDoc/po/DetailComment.hbm.xml" />
+	<mapping resource="com/endDoc/po/Abbreviation.hbm.xml" />
+	<mapping resource="com/endDoc/po/DefaultTag.hbm.xml" />
+	<mapping resource="com/endDoc/po/Doc_type.hbm.xml" />
+	<mapping resource="com/endDoc/po/DocumentAttribute.hbm.xml" />
+	<mapping resource="com/endDoc/po/Extra_info.hbm.xml" />
+	<mapping resource="com/endDoc/po/Reference.hbm.xml" />
+	<mapping resource="com/endDoc/po/RefType.hbm.xml" />
+	<mapping resource="com/endDoc/po/DetailCommentAttri.hbm.xml" />
+
+</session-factory>
+</hibernate-configuration>

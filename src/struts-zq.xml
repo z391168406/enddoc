@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="sys" namespace="/" extends="json-default">
+		<action name="login" class="loginAction" method="login">
+			<result type="json"></result>
+		</action>
+		<action name="logout" class="loginAction" method="logout">
+			<result type="json"></result>
+		</action>
+		<action name="user_*" class="userAction" method="{1}">
+			<result type="json"></result>
+		</action>
+		<action name="tag_*" class="tagAction" method="{1}">
+			<result type="json"></result>
+		</action>
+		<action name="abbr_*" class="abbreviationAction" method="{1}">
+			<result type="json"></result>
+		</action>
+		<action name="ref_*" class="refAction" method="{1}">
+			<result type="json"></result>
+		</action>
+		<action name="comment_*" class="detailCommentAction" method="{1}">
+			<result type="json"></result>
+		</action>
+		<action name="statistics_*" class="statisticsAction" method="{1}">
+			<result type="json"></result>
+		</action>
+	</package>
+</struts>    

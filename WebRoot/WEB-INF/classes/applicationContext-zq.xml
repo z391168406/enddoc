@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean name="loginAction" class="com.endDoc.action.LoginAction"
+		scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	<bean name="userAction" class="com.endDoc.action.UserAction"
+		scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	<bean name="userService" class="com.endDoc.service.impl.UserService">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	<bean name="userDao" class="com.endDoc.dao.impl.UserDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean> 
+	<bean name="tagAction" class="com.endDoc.action.TagAction"
+		scope="prototype">
+		<property name="tagService" ref="tagService"></property>
+	</bean>
+	<bean name="tagService" class="com.endDoc.service.impl.TagService">
+		<property name="tagDao" ref="tagDao"></property>
+	</bean>
+	<bean name="tagDao" class="com.endDoc.dao.impl.TagDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean> 
+	<bean name="attachmentAction" class="com.endDoc.action.AttachmentAction"
+		scope="prototype">
+		<property name="attachmentService" ref="attachmentService"></property>
+	</bean>
+	<bean name="attachmentService" class="com.endDoc.service.impl.AttachmentService">
+		<property name="attachmentDao" ref="attachmentDao"></property>
+	</bean>
+	<bean name="attachmentDao" class="com.endDoc.dao.impl.AttachmentDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean> 
+	<bean name="abbreviationAction" class="com.endDoc.action.AbbreviationAction"
+		scope="prototype">
+		<property name="abbreviationService" ref="abbreviationService"></property>
+	</bean>
+	<bean name="abbreviationService" class="com.endDoc.service.impl.AbbreviationService">
+		<property name="abbreviationDao" ref="abbreviationDao"></property>
+	</bean>
+	<bean name="abbreviationDao" class="com.endDoc.dao.impl.AbbreviationDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean> 
+	<bean name="refAction" class="com.endDoc.action.RefAction"
+		scope="prototype">
+		<property name="refService" ref="refService"></property>
+	</bean>
+	<bean name="refService" class="com.endDoc.service.impl.RefService">
+		<property name="refDao" ref="refDao"></property>
+	</bean>
+	<bean name="refDao" class="com.endDoc.dao.impl.RefDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean> 
+	<bean name="statisticsAction" class="com.endDoc.action.StatisticsAction"
+		scope="prototype">
+		<property name="statisticsService" ref="statisticsService"></property>
+	</bean>
+	<bean name="statisticsService" class="com.endDoc.service.impl.StatisticsService">
+			<property name="statisticsDao" ref="statisticsDao"></property>
+	</bean>
+	<bean name="statisticsDao" class="com.endDoc.dao.impl.StatisticsDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean> 
+</beans>

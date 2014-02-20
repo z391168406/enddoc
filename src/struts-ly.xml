@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="document" namespace="/" extends="json-default">
+		<action name="document_*" class="documentAction" method="{1}">
+			<result name="success" type="redirect">/main.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		<action name="documents_*" class="documentAction" method="{1}">
+			<result type="json"></result>
+		</action>
+		<action name="briefComment_*" class="briefCommentAction" method="{1}">
+			<result type="json"></result>
+		</action>
+		<action name="detailComment_*" class="detailCommentAction" method="{1}">
+			<result type="json"></result>
+		</action>
+		<action name="rate_*" class="rateAction" method="{1}">
+			<result type="json"></result>
+		</action>
+		<action name="backup_*" class="backupAction" method="{1}">
+			<result type="json"></result>
+		</action>
+	</package>
+</struts>    

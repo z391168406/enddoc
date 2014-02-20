@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.endDoc.po">
+	<class name="AttachmentPo" table="attachment"  > 
+		<id  name="id"    column="id" >
+			<generator class="native"></generator>	
+		</id>
+		<property name="did" />
+		<property name="username" />
+		<property name="title" />
+		<property name="type" />
+		<property name="url" />
+		<property name="create_time" />
+		<property name="update_time" />		
+		
+	</class>
+</hibernate-mapping>

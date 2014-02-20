@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean name="documentAction" class="com.endDoc.action.DocumentAction"
+		scope="prototype">
+		<property name="documentService" ref="documentService"></property>
+		<property name="attachmentService" ref="attachmentService"></property>
+		<property name="tagService" ref="tagService"></property>
+		<property name="refService" ref="refService"></property>
+		<property name="rateService" ref="rateService"></property>
+	</bean>
+	<bean name="documentService" class="com.endDoc.service.impl.DocumentService">
+		<property name="documentDao" ref="documentDao"></property>
+	</bean>
+	<bean name="documentDao" class="com.endDoc.dao.impl.DocumentDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean> 
+	
+	<bean name="briefCommentAction" class="com.endDoc.action.BriefCommentAction"
+		scope="prototype">
+		<property name="briefCommentService" ref="briefCommentService"></property>
+	</bean>
+	<bean name="briefCommentService" class="com.endDoc.service.impl.BriefCommentService">
+		<property name="briefCommentDao" ref="briefCommentDao"></property>
+	</bean>
+	<bean name="briefCommentDao" class="com.endDoc.dao.impl.BriefCommentDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean> 
+	
+	<bean name="detailCommentAction" class="com.endDoc.action.DetailCommentAction"
+		scope="prototype">
+		<property name="detailCommentService" ref="detailCommentService"></property>
+	</bean>
+	<bean name="detailCommentService" class="com.endDoc.service.impl.DetailCommentService">
+		<property name="detailCommentDao" ref="detailCommentDao"></property>
+	</bean>
+	<bean name="detailCommentDao" class="com.endDoc.dao.impl.DetailCommentDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean> 
+	
+	<bean name="rateAction" class="com.endDoc.action.RateAction"
+		scope="prototype">
+		<property name="rateService" ref="rateService"></property>
+	</bean>
+	<bean name="rateService" class="com.endDoc.service.impl.RateService">
+		<property name="rateDao" ref="rateDao"></property>
+	</bean>
+	<bean name="rateDao" class="com.endDoc.dao.impl.RateDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean name="backupAction" class="com.endDoc.action.BackupAction"
+		scope="prototype">
+	</bean>
+</beans>
